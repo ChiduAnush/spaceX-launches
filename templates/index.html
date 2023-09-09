@@ -4,43 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceX Launches</title>
-    <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn. bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"/> -->
 
 </head>
 <body>
-    <h1>SpaceX launches</h1>
 
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#successfull">successfull</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#failed">failed</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#upcoming">upcoming</a>
-        </li>
-    </ul>
+    <div class="container">
+        <h2>SpaceX launches</h2>
 
-    <div class="tab-content">
-        <div id="successfull" class="container tab-pane active"></div>
-        <div id="failed" class="container tab-pane fade"></div>
-        <div id="upcoming" class="container tab-pane fade"></div>
-    </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item active">
+                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#successful">Successful</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#failed">Failed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#upcoming">Upcoming</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane container active">
+                <br>
+                Hello there, (yep star wars reference)
+                heres something I made to keep track of all space x launches lols. just a weekend project. ;) <br>
+                click on the tabs above to see the data about all successful, failed, and upcoming missions. <br><br> ~arigato
+            </div>
+            <div id="successful" class="tab-pane container fade">
+                {% for launch in launches.successful%}
+                <div>
+                    <p>name: {{launch.name}}</p>
+                    <p>date: {{launch.date_utc}}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="failed" class="tab-pane container fade">
+                {% for launch in launches.failed%}
+                <div>
+                    <p>name: {{launch.name}}</p>
+                    <p>date: {{launch.date_utc}}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="upcoming" class="tab-pane container fade">
+                {% for launch in launches.upcoming%}
+                <div>
+                    <p>name: {{launch.name}}</p>
+                    <p>date: {{launch.date_utc}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>  
 
 
-    {% for launch in launches.successfull%}
-    <div>
-        <p>name: {{launch.name}}</p>
-        <p>date: {{launch.date_utc}}</p>
-    </div>
-    {% endfor %}
+
+
 </body>
 </html>
