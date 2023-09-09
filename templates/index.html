@@ -1,3 +1,6 @@
+{% from "launch_card.html" import render_launch %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,26 +44,17 @@
             </div>
             <div id="successful" class="tab-pane container fade">
                 {% for launch in launches.successful%}
-                <div>
-                    <p>name: {{launch.name}}</p>
-                    <p>date: {{launch.date_utc}}</p>
-                </div>
+                    {{ render_launch(launch) }}
                 {% endfor %}
             </div>
             <div id="failed" class="tab-pane container fade">
                 {% for launch in launches.failed%}
-                <div>
-                    <p>name: {{launch.name}}</p>
-                    <p>date: {{launch.date_utc}}</p>
-                </div>
+                    {{ render_launch(launch) }}
                 {% endfor %}
             </div>
             <div id="upcoming" class="tab-pane container fade">
                 {% for launch in launches.upcoming%}
-                <div>
-                    <p>name: {{launch.name}}</p>
-                    <p>date: {{launch.date_utc}}</p>
-                </div>
+                    {{ render_launch(launch) }}
                 {% endfor %}
             </div>
         </div>
