@@ -19,13 +19,13 @@
 
     <div class="container">
         <h2>SpaceX launches</h2>
+        Hello there, (yep star wars reference)
+        heres something I made to keep track of all space x launches lols. just a weekend project. ;) <br>
+        click on the tabs above to see the data about all successful, failed, and upcoming missions. <br><br>
 
         <ul class="nav nav-tabs">
             <li class="nav-item active">
-                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#successful">Successful</a>
+                <a class="nav-link active" data-toggle="tab" href="#successful">Successful</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#failed">Failed</a>
@@ -36,13 +36,7 @@
         </ul>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane container active">
-                <br>
-                Hello there, (yep star wars reference)
-                heres something I made to keep track of all space x launches lols. just a weekend project. ;) <br>
-                click on the tabs above to see the data about all successful, failed, and upcoming missions. <br><br> ~arigato
-            </div>
-            <div id="successful" class="tab-pane container fade">
+            <div id="successful" class="tab-pane container active">
                 {% for launch in launches.successful%}
                     {{ render_launch(launch) }}
                 {% endfor %}

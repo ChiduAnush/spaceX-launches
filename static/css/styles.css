@@ -5,12 +5,13 @@
     margin-top: 20px;
     border: 1px solid #faf9f9;
     border-radius: 3px;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow, 0.3s;
+    align-items:flex-start;
 }
 
 .launch-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .launch-image {
@@ -18,4 +19,14 @@
     width: 100px;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.launch-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
