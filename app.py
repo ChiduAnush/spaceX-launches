@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", launches=launches)
 
 
 def fetch_spacex_launches():
@@ -28,7 +28,6 @@ def categorize_launches(launches):
 
 
 launches = categorize_launches(fetch_spacex_launches())
-print(launches)
 
 
 if __name__ == "__main__":

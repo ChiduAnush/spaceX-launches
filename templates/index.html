@@ -15,7 +15,26 @@
 
 </head>
 <body>
-    <h1>Hello World!</h1> <br>
-    <h3>Namaskarams ji</h3>
+    <h1>SpaceX launches</h1>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#successfull">successfull</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#failed">failed</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#upcoming">upcoming</a>
+        </li>
+    </ul>
+
+
+    {% for launch in launches.successfull%}
+    <div>
+        <p>name: {{launch.name}}</p>
+        <p>date: {{launch.date_utc}}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
