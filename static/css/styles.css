@@ -12,3 +12,10 @@
 .launch-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.launch-image {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
